@@ -16,7 +16,7 @@ public class IterableWithPolicyImpl<T> implements IterableWithPolicy<T> {
     private Predicate<T> filter;
 
     /**
-     * Initialize the Iterable class
+     * Initialize the Iterable class.
      * @param array list of elements
      */
     public IterableWithPolicyImpl(final T[] array) {
@@ -39,7 +39,7 @@ public class IterableWithPolicyImpl<T> implements IterableWithPolicy<T> {
     }
     
     /**
-     * Returns the array iterator
+     * Array iterator
      * @return The iterator
      * @see java.lang.Iterable#iterator()
      */
@@ -48,10 +48,6 @@ public class IterableWithPolicyImpl<T> implements IterableWithPolicy<T> {
         return new WithPolicyIterator();
     }
 
-    /**
-     * @param filter Set the iterator's filter
-     * @see it.unibo.inner.api.IterableWithPolicy#setIterationPolicy(it.unibo.inner.api.Predicate)
-     */
     @Override
     public void setIterationPolicy(final Predicate<T> filter) {
         this.filter = filter;
@@ -68,10 +64,6 @@ public class IterableWithPolicyImpl<T> implements IterableWithPolicy<T> {
             size = elements.size();
         }
 
-        /**
-         * Check if the iterator have another element
-         * @see java.util.Iterator#hasNext()
-         */
         @Override
         public boolean hasNext() {
             while (currentIndex < size) {
@@ -83,10 +75,6 @@ public class IterableWithPolicyImpl<T> implements IterableWithPolicy<T> {
             return false;
         }
 
-        /** 
-         * @return Returns {@link T} - Item of rhe current index
-         * @see java.util.Iterator#next()
-         */
         @Override
         public T next() {
             if (this.hasNext()) {
