@@ -45,7 +45,7 @@ public final class MonthSorterNested implements MonthSorter {
         NOVEMBER(30),
         DECEMBER(31);
 
-        private static final Locale LOCALE = Locale.ITALIAN;
+        private static final Locale LOCALE = Locale.ROOT;
         private final int daysCount;
 
         Month(final int daysCount) {
