@@ -80,7 +80,7 @@ class TestStrictBankAccount {
         final Exception e = assertThrows(IllegalArgumentException.class, new Executable() {
             @Override
             public void execute() throws Throwable {
-                bankAccount.withdraw(mRossi.getUserID(), TETS_NEGATIVE_WITHDROW_AMOUNT);
+                bankAccount.withdraw(mRossi.getUserID(), TEST_NEGATIVE_WITHDROW_AMOUNT);
             }
         });
         assertNotNull(e.getMessage());
