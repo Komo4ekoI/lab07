@@ -56,8 +56,8 @@ public final class MonthSorterNested implements MonthSorter {
             Objects.requireNonNull(monthName);
             final String formatedName = monthName.toUpperCase(LOCALE);
             try {
-                // passes if the name is axatly identical and UPPED
-                return Month.valueOf(formatedName);
+                // passes if the name is axatly identical, even if it's not initialy upped 
+                return Month.valueOf(formatedName.toUpperCase(LOCALE));
             } catch (final IllegalArgumentException e) {
                 Month result = null;
                 for (final Month month : values()) {
@@ -86,7 +86,6 @@ public final class MonthSorterNested implements MonthSorter {
         public int compare(final String o1, final String o2) {
             final Month first = monthValidate(o1);
             final Month second = monthValidate(o2);
-
             return Integer.compare(first.ordinal(), second.ordinal());
         }
     }
@@ -98,7 +97,6 @@ public final class MonthSorterNested implements MonthSorter {
         public int compare(final String o1, final String o2) {
             final Month first = monthValidate(o1);
             final Month second = monthValidate(o2);
-
             return Integer.compare(first.daysCount, second.daysCount);
         }
     }
