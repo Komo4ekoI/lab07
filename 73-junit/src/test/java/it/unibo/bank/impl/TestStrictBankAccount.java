@@ -25,7 +25,7 @@ class TestStrictBankAccount {
 
     private static final double TEST_DEPOSIT_AMOUNT = 100.0;
     private static final int DEPOSIT_OPERATIONS_COUNT = 20;
-    private static final double TETS_NEGATIVE_WITHDROW_AMOUNT = -200.0;
+    private static final double TEST_NEGATIVE_WITHDROW_AMOUNT = -200.0;
 
     private static final int MIN_ERROR_MESSAGE_LENGTH = 10;
 
